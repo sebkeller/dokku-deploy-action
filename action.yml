@@ -1,0 +1,40 @@
+name: "Deploy to Dokku Action"
+author: "Sébastien Keller"
+description: "Deploy to dokku using Github Actions."
+inputs:
+  ssh-private-key:
+    description: "The ssh private key to the dokku instance."
+    required: true
+  dokku-app-name:
+    description: "The dokku app name."
+    required: true
+  dokku-host:
+    description: "The dokku host to ssh into."
+    required: true
+  dokku-port:
+    description: "The dokku server port for ssh (Default: 22)."
+    required: false
+    default: "22"
+  dokku-user:
+    description: "The user to use for ssh (Default: dokku)."
+    required: false
+    default: "dokku"
+  git-branch:
+    description: "The branch to push on the remote repository (Default: master)."
+    required: false
+    default: "master"
+  git-flags:
+    description: "Any flags to be passed to the git push command."
+    required: false
+    default: ""
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.ssh-private-key }}
+    - ${{ inputs.dokku-app-name }}
+    - ${{ inputs.dokku-host }}
+    - ${{ inputs.dokku-port }}
+    - ${{ inputs.dokku-user }}
+    - ${{ inputs.git-branch }}
+    - ${{ inputs.git-flags }}
