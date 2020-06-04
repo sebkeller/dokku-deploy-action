@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash
 
 SSH_PRIVATE_KEY=$1
 DOKKU_APP_NAME=$2
