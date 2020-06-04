@@ -26,4 +26,4 @@ GIT_COMMAND="git push deploy $REMOTE_REF $GIT_FLAGS"
 echo "GIT_COMMAND=$GIT_COMMAND"
 
 # Push to Dokku git repository
-GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${DOKKU_PORT} $GIT_COMMAND
+GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${DOKKU_PORT}" $GIT_COMMAND
