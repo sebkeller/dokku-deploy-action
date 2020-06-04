@@ -13,7 +13,6 @@ mkdir -p ~/.ssh
 eval `ssh-agent -s`
 ssh-add - <<< $SSH_PRIVATE_KEY
 ssh-keyscan $DOKKU_HOST >> ~/.ssh/known_hosts
-chown 400 ~/.ssh/id_rsa
 
 # Setup the git environment
 REMOTE=$DOKKU_USER@$DOKKU_HOST:$DOKKU_APP_NAME
