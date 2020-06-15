@@ -1,6 +1,9 @@
 name: "Deploy to Dokku Action"
 author: "Sébastien Keller"
 description: "Deploy to dokku using Github Actions."
+branding:
+  icon: "server"
+  color: "blue"
 inputs:
   ssh-private-key:
     description: "The ssh private key to the dokku instance."
